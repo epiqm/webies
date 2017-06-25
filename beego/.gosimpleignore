@@ -1,0 +1,4 @@
+github.com/epiqm/webies/beego/*/*:S1012
+github.com/epiqm/webies/beego/*:S1012
+github.com/epiqm/webies/beego/beego/*/*:S1007
+github.com/epiqm/webies/beego/*:S1007

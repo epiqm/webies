@@ -174,10 +174,10 @@ func TestJson(t *testing.T) {
 		}
 
 	}
-	if err = jsonconf.Set("name", "astaxie"); err != nil {
+	if err = jsonconf.Set("name", "epiqm"); err != nil {
 		t.Fatal(err)
 	}
-	if jsonconf.String("name") != "astaxie" {
+	if jsonconf.String("name") != "epiqm" {
 		t.Fatal("get name error")
 	}
 

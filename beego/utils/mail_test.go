@@ -17,12 +17,12 @@ package utils
 import "testing"
 
 func TestMail(t *testing.T) {
-	config := `{"username":"astaxie@gmail.com","password":"astaxie","host":"smtp.gmail.com","port":587}`
+	config := `{"username":"epiqm@gmail.com","password":"epiqm","host":"smtp.gmail.com","port":587}`
 	mail := NewEMail(config)
-	if mail.Username != "astaxie@gmail.com" {
+	if mail.Username != "epiqm@gmail.com" {
 		t.Fatal("email parse get username error")
 	}
-	if mail.Password != "astaxie" {
+	if mail.Password != "epiqm" {
 		t.Fatal("email parse get password error")
 	}
 	if mail.Host != "smtp.gmail.com" {
@@ -32,10 +32,10 @@ func TestMail(t *testing.T) {
 		t.Fatal("email parse get port error")
 	}
 	mail.To = []string{"xiemengjun@gmail.com"}
-	mail.From = "astaxie@gmail.com"
+	mail.From = "epiqm@gmail.com"
 	mail.Subject = "hi, just from beego!"
 	mail.Text = "Text Body is, of course, supported!"
 	mail.HTML = "<h1>Fancy Html is supported, too!</h1>"
-	mail.AttachFile("/Users/astaxie/github/beego/beego.go")
+	mail.AttachFile("/Users/epiqm/github/beego/beego.go")
 	mail.Send()
 }

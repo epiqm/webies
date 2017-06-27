@@ -18,7 +18,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/astaxie/beego/cache"
+	"github.com/epiqm/webies/beego/cache"
 	"github.com/garyburd/redigo/redis"
 )
 
@@ -28,67 +28,67 @@ func TestRedisCache(t *testing.T) {
 		t.Error("init err")
 	}
 	timeoutDuration := 10 * time.Second
-	if err = bm.Put("astaxie", 1, timeoutDuration); err != nil {
+	if err = bm.Put("epiqm", 1, timeoutDuration); err != nil {
 		t.Error("set Error", err)
 	}
-	if !bm.IsExist("astaxie") {
+	if !bm.IsExist("epiqm") {
 		t.Error("check err")
 	}
 
 	time.Sleep(11 * time.Second)
 
-	if bm.IsExist("astaxie") {
+	if bm.IsExist("epiqm") {
 		t.Error("check err")
 	}
-	if err = bm.Put("astaxie", 1, timeoutDuration); err != nil {
+	if err = bm.Put("epiqm", 1, timeoutDuration); err != nil {
 		t.Error("set Error", err)
 	}
 
-	if v, _ := redis.Int(bm.Get("astaxie"), err); v != 1 {
+	if v, _ := redis.Int(bm.Get("epiqm"), err); v != 1 {
 		t.Error("get err")
 	}
 
-	if err = bm.Incr("astaxie"); err != nil {
+	if err = bm.Incr("epiqm"); err != nil {
 		t.Error("Incr Error", err)
 	}
 
-	if v, _ := redis.Int(bm.Get("astaxie"), err); v != 2 {
+	if v, _ := redis.Int(bm.Get("epiqm"), err); v != 2 {
 		t.Error("get err")
 	}
 
-	if err = bm.Decr("astaxie"); err != nil {
+	if err = bm.Decr("epiqm"); err != nil {
 		t.Error("Decr Error", err)
 	}
 
-	if v, _ := redis.Int(bm.Get("astaxie"), err); v != 1 {
+	if v, _ := redis.Int(bm.Get("epiqm"), err); v != 1 {
 		t.Error("get err")
 	}
-	bm.Delete("astaxie")
-	if bm.IsExist("astaxie") {
+	bm.Delete("epiqm")
+	if bm.IsExist("epiqm") {
 		t.Error("delete err")
 	}
 
 	//test string
-	if err = bm.Put("astaxie", "author", timeoutDuration); err != nil {
+	if err = bm.Put("epiqm", "author", timeoutDuration); err != nil {
 		t.Error("set Error", err)
 	}
-	if !bm.IsExist("astaxie") {
+	if !bm.IsExist("epiqm") {
 		t.Error("check err")
 	}
 
-	if v, _ := redis.String(bm.Get("astaxie"), err); v != "author" {
+	if v, _ := redis.String(bm.Get("epiqm"), err); v != "author" {
 		t.Error("get err")
 	}
 
 	//test GetMulti
-	if err = bm.Put("astaxie1", "author1", timeoutDuration); err != nil {
+	if err = bm.Put("epiqm1", "author1", timeoutDuration); err != nil {
 		t.Error("set Error", err)
 	}
-	if !bm.IsExist("astaxie1") {
+	if !bm.IsExist("epiqm1") {
 		t.Error("check err")
 	}
 
-	vv := bm.GetMulti([]string{"astaxie", "astaxie1"})
+	vv := bm.GetMulti([]string{"epiqm", "epiqm1"})
 	if len(vv) != 2 {
 		t.Error("GetMulti ERROR")
 	}

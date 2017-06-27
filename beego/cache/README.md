@@ -26,10 +26,10 @@ Then init a Cache (example with memory adapter)
 
 Use it like this:	
 	
-	bm.Put("astaxie", 1, 10 * time.Second)
-	bm.Get("astaxie")
-	bm.IsExist("astaxie")
-	bm.Delete("astaxie")
+	bm.Put("epiqm", 1, 10 * time.Second)
+	bm.Get("epiqm")
+	bm.IsExist("epiqm")
+	bm.Delete("epiqm")
 
 
 ## Memory adapter

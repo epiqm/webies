@@ -19,7 +19,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/astaxie/beego/config"
+	"github.com/epiqm/webies/beego/config"
 )
 
 func TestYaml(t *testing.T) {
@@ -105,10 +105,10 @@ func TestYaml(t *testing.T) {
 
 	}
 
-	if err = yamlconf.Set("name", "astaxie"); err != nil {
+	if err = yamlconf.Set("name", "epiqm"); err != nil {
 		t.Fatal(err)
 	}
-	if yamlconf.String("name") != "astaxie" {
+	if yamlconf.String("name") != "epiqm" {
 		t.Fatal("get name error")
 	}
 

@@ -19,7 +19,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/astaxie/beego/config"
+	"github.com/epiqm/webies/beego/config"
 )
 
 func TestDefaults(t *testing.T) {
